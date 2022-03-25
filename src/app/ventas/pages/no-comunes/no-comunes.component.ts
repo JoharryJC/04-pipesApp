@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { interval, timeout } from 'rxjs';
 
 @Component({
   selector: 'app-no-comunes',
@@ -58,5 +59,17 @@ export class NoComunesComponent {
     }
   ]
 
+  //Async Pipe
+
+  miObservable = interval(5000); //0,1,2,3,4
+
+  valorPromesa = new Promise((resolve, reject)=> {
+
+      setTimeout(()=>{
+        resolve("Tenemos data de promesa!")
+      }, 3500)
+  }
+  
+  );
 
 }
