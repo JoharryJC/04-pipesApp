@@ -1,9 +1,11 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRouterModule } from './app-router.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 
+//Modulo personalizado
+import { AppRouterModule } from './app-router.module';
 import { SharedModule } from './shared/shared.module';
 import { VentasModule } from './ventas/ventas.module';
 
@@ -20,6 +22,7 @@ registerLocaleData(localeFr);
   ],
   imports: [
     BrowserModule, 
+    BrowserAnimationsModule, 
     AppRouterModule,
     SharedModule,
     VentasModule 
