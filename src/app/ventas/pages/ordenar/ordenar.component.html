@@ -18,19 +18,22 @@
         <button pButton
                 icon="pi pi-sort" 
                 label="Por nombre" 
-                class="mr-1"
+                class="mr-1" 
+                (click)="cambiarOrden('nombre')"
         ></button>
 
         <button pButton
                 icon="pi pi-sort" 
-                label="Valores" 
-                class="mr-1 p-button-success"
+                label="Vuela" 
+                class="mr-1 p-button-success" 
+                (click)="cambiarOrden('vuela')"
         ></button>
 
         <button pButton
                 icon="pi pi-sort" 
                 label="Por Color" 
-                class="mr-1 p-button-help"
+                class="mr-1 p-button-help" 
+                (click)="cambiarOrden('color')"
         ></button>
 
     </div>
@@ -38,7 +41,7 @@
 
 <div class="p-grid">
     <div class="col mt-5">
-        <p-table [value]="heroes" >
+        <p-table [value]="heroes | ordenar:ordenarPor" >
             <ng-template pTemplate="header">
                 <tr>
                     <th>Nombre</th>
